@@ -5,7 +5,10 @@ function createGrid(side){
         container.classList.add("row");
         for(let col = 0; col < side; col++){
             const div = document.createElement('div');
-            // div.setAttribute('id', `${row}:${col}`);
+            let size = 80/side;
+            div.style.minWidth= `${size}vh`;
+            div.style.paddingBottom=`${size}vh`;
+            div.style.border="1px ridge"
             div.classList.add('square');
             container.appendChild(div);
         }  
@@ -41,7 +44,7 @@ const sizeNum = document.getElementById("sizeNum");
 size.addEventListener("click", () => {
     let gridSize = 0;
     while (!Number.isInteger(Number(gridSize)) || gridSize < 1 || gridSize > 100){
-        gridSize = prompt("Enter a grid size between 1 to 100", "Note: Your drawing will be erased");
+        gridSize = prompt("Enter a valid grid size between 1 to 100", "Note: Your drawing will be erased");
     }
     reset();
     sizeNum.textContent=`Size of Grid: ${gridSize}`;
