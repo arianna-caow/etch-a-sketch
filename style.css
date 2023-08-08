@@ -1,0 +1,36 @@
+html, body{
+    margin:0;
+    height:100%;
+    width:100%;
+}
+h1{
+    text-align:center;
+    font-family: "Shadows Into Light", sans-serif;
+}
+.square{
+    min-width:5vh;
+    padding-bottom:5vh; /*sets height equal to width*/
+    border:1px dotted; /*takes up pixels too*/
+}
+.row{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#container{
+    display:flex;
+    flex-direction:column;
+    /* justify-content:center; */
+}
+
+#reset{
+    padding:3px 10px;
+    margin:8px 5px 0;
+    width:85%;
+    text-align: center;
+}
+#resetContainer{
+    display:flex;
+    justify-content:center;
+}
