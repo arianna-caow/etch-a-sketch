@@ -1,9 +1,9 @@
-function createGrid(){
+function createGrid(side){
     const outerContainer = document.querySelector("#container");
-    for (let row = 0; row < 16; row++) {
+    for (let row = 0; row < side; row++) {
         const container = document.createElement("div");
         container.classList.add("row");
-        for(let col = 0; col < 16; col++){
+        for(let col = 0; col < side; col++){
             const div = document.createElement('div');
             // div.setAttribute('id', `${row}:${col}`);
             div.classList.add('square');
@@ -12,7 +12,6 @@ function createGrid(){
         outerContainer.appendChild(container);
     }
 }
-
 
 function changeColor(){
     const squares = document.querySelectorAll('.square');
@@ -31,10 +30,21 @@ console.log(squares);
     });
 }
 
+const slider = document.getElementById("myRange");
+const output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  console.log(this.value);
+  //createGrid(this.value);
+}
+
+
 const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', () => {
     reset();
 });
 
-createGrid();
+createGrid(16);
 changeColor();
