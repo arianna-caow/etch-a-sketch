@@ -24,21 +24,17 @@ function changeColor(){
 
 function reset(){
     const squares = document.querySelectorAll('.square');
-console.log(squares);
     squares.forEach(square => {
         square.style.backgroundColor="white";
     });
 }
 
-const slider = document.getElementById("myRange");
-const output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-  console.log(this.value);
-  //createGrid(this.value);
-}
+const size = document.getElementById("size");
+const sizeNum = document.getElementById("sizeNum");
+size.addEventListener("submit", () => {
+    console.log(size.value);
+    reset();
+});
 
 
 const resetButton = document.querySelector('#reset');
@@ -46,5 +42,5 @@ resetButton.addEventListener('click', () => {
     reset();
 });
 
-createGrid(16);
+//createGrid(16);
 changeColor();
