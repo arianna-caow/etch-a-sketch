@@ -17,7 +17,7 @@ function changeColor(){
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor="black";
+            square.style.backgroundColor="#63666A";
         });
     });
 }
@@ -28,19 +28,32 @@ function reset(){
         square.style.backgroundColor="white";
     });
 }
+function clearAll(){
+    const outerContainer = document.querySelector("#container");
+    const container = document.querySelectorAll('.row');
+    container.forEach(c => {
+        outerContainer.removeChild(c);
+    });
+}
 
-const size = document.getElementById("size");
+const size = document.getElementById("sizeButton");
 const sizeNum = document.getElementById("sizeNum");
-size.addEventListener("submit", () => {
-    console.log(size.value);
+size.addEventListener("click", () => {
+    let gridSize = 0;
+    while (!Number.isInteger(Number(gridSize)) || gridSize < 1 || gridSize > 100){
+        gridSize = prompt("Enter a grid size between 1 to 100", "Note: Your drawing will be erased");
+    }
     reset();
+    sizeNum.textContent=`Size of Grid: ${gridSize}`;
+    clearAll();
+    createGrid(gridSize);
+    changeColor();
 });
-
 
 const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', () => {
     reset();
 });
 
-//createGrid(16);
+createGrid(16);
 changeColor();

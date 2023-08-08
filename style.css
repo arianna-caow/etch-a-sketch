@@ -24,7 +24,6 @@ h1,p {
 .sizeContainer,
 .row{
     display:flex;
-    gap:10px;
     justify-content:center;
 }
 
@@ -33,4 +32,9 @@ h1,p {
     margin:8px 0;
     text-align: center;
     width:80%;
+}
+
+.sizeContainer{
+    gap:10px;
+    margin-bottom:10px;
 }
