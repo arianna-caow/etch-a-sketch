@@ -8,6 +8,9 @@ html, body{
 p {
     margin:0;
 }
+h1{
+    margin-bottom:0;
+}
 .square{
     margin:0;
     min-width:5vh; 
@@ -27,14 +30,19 @@ p {
     justify-content:center;
 }
 
-#reset{
-    padding:3px 10px;
-    margin:8px 0;
-    text-align: center;
-    width:80%;
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:auto;
+    height:50px;
+    width:100%;
 }
 
 .sizeContainer{
-    gap:10px;
-    margin-bottom:10px;
+    gap: 20px;
+}
+
+#reset, #sizeButton{
+    padding: 3px 10px;
 }

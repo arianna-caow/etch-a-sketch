@@ -1,8 +1,10 @@
 const outerContainer = document.querySelector("#container");
 const resetButton = document.querySelector('#reset');
 const screen = .8*smallerScreenSize();
+const header = document.querySelector(".options");
 
-resetButton.style.width=(`${screen+20}px`);
+// resetButton.style.width=(`${screen+20}px`);
+header.style.width=(`${screen+20}px`);
 
 function createGrid(side){
     for (let row = 0; row < side; row++) {
