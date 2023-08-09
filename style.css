@@ -2,21 +2,23 @@ html, body{
     margin:0;
     height:100%;
     width:100%;
-}
-h1,p {
     text-align:center;
-    margin:0;
     font-family: "Shadows Into Light", sans-serif;
 }
+h1,p {
+    margin:0;
+    
+}
 .square{
-    min-width:5vh; /* 80/size vh */
-    padding-bottom:5vh; /*sets height equal to width*/
-    border:1px dotted; /*takes up pixels too*/
+    margin:0;
+    min-width:5vh; 
+    padding-bottom:5vh; 
+    border:.01vh dotted; /*takes up pixels too*/
 }
 
 #container{
-    display:flex;
-    flex-direction:column;
+    display:inline-block;
+    border:10px groove;
     /* justify-content:center; */
 }
 
