@@ -1,4 +1,8 @@
 const outerContainer = document.querySelector("#container");
+const resetButton = document.querySelector('#reset');
+const screen = .8*smallerScreenSize();
+
+resetButton.style.width=(`${screen+20}px`);
 
 function createGrid(side){
     for (let row = 0; row < side; row++) {
@@ -14,21 +18,11 @@ function createGrid(side){
         outerContainer.appendChild(container);
     }
 }
-// 2 w 641px
-// h 544.5px
-// 10 w 641px
-// h 522.656
-// 20 532.5
-
 
 function setBorderWidth(div,side){
-    let size = .8*smallerScreenSize()/side;
-    console.log(size);
-    // let borderWidth = 1/side;
-    // console.log(borderWidth);
+    let size = screen/side;
     div.style.minWidth= `${size}px`;
     div.style.paddingBottom=`${size}px`;
-    // div.style.borderWidth = `${borderWidth}px ${borderWidth}px 0 0`;
     div.style.border="0";
 }
 function smallerScreenSize(){
@@ -77,7 +71,6 @@ size.addEventListener("click", () => {
     changeColor();
 });
 
-const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', () => {
     reset();
 });

@@ -5,21 +5,19 @@ html, body{
     text-align:center;
     font-family: "Shadows Into Light", sans-serif;
 }
-h1,p {
+p {
     margin:0;
-    
 }
 .square{
     margin:0;
     min-width:5vh; 
     padding-bottom:5vh; 
-    border:.01vh dotted; /*takes up pixels too*/
+    border:0;
 }
 
 #container{
     display:inline-block;
     border:10px groove;
-    /* justify-content:center; */
 }
 
 #resetContainer,
